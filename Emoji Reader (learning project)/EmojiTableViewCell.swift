@@ -16,4 +16,10 @@ class EmojiTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+     
+    func setConfiguration(emoji: Emoji) {
+        self.emojiLabel?.text = emoji.emoji
+        self.nameLabel?.text = emoji.name
+        self.descriptionLabel?.text = emoji.description
+    }
 }
