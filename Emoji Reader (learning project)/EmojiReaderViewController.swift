@@ -8,7 +8,7 @@
 import UIKit
 
 class EmojiReaderViewController: UITableViewController {
-
+   
     var emojiObjects = [
         Emoji(emoji: "🤣", name: "Rofl", description: "Rofling everyday on everything", isFavorite: false),
         Emoji(emoji: "🥰", name: "Love", description: "Let's love each other", isFavorite: false),
