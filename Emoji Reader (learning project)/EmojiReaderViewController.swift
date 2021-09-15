@@ -27,6 +27,18 @@ class EmojiReaderViewController: UITableViewController {
         self.title = "Emoji Reader"
     }
 
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveSegue" else { return }
+        
+        //Get emojiObject from NewEmojiTableViewController
+        let segueVC = segue.source as! NewEmojiTableViewController
+        let emoji = segueVC.emoji
+        
+        let newIndexPath = IndexPath(row: emojiObjects.count, section: 0)
+        emojiObjects.append(emoji)
+        tableView.insertRows(at: [newIndexPath], with: .fade)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
